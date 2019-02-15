@@ -15,8 +15,30 @@
 */
 
 var thisDate = new Date("10/12/2018");
+
+// Makes this the date displayed on the website
+
 var dateString = thisDate.toLocaleString();
 
+// This just takes the real local time & displays it on the webpage
+
+var dateHTML = "<h2>" + thisDate + "</h2>";
+
+// Sets the date correctly
+
+var thisDay = thisDate.getDay();
+
+// Gains the actual local day of the week from the computer
+
+var eventHTML = getEvent(thisDay);
+
+// Marks the event on the correctly dated day
+
+
+document.getElementById("unionToday").insertAdjacentHTML("beforeend", dateHTML + eventHTML);
+
+
+// Causing the date and event to be placed before the "union today"
 
 
 function getEvent(day) {
